@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+  margin: 0;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+.panel {
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 70px;
+  color: white;
+  cursor: pointer;
+  flex: 0.5;
+  transition: flex 0.7s ease-in;
+  position: relative;
+  margin: 10px;
+}
+
+.panel h3 {
+  position: absolute;
+  bottom: 20px;
+  font-size: 24px;
+  left: 30px;
+  margin: 0px;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+  /* 0.4 is delay */
+}
+
+/* Effect under 480px */
+@media (max-width: 720px) {
+  .container {
+    width: 100vw;
+  }
+
+  .panel:nth-of-type(5),
+  .panel:nth-of-type(6) {
+    display: none;
+  }
+}

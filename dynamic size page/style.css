@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+
+:root {
+  --left-bg-color: rgba(82, 82, 245, 0.7);
+  --right-bg-color: rgba(43, 43, 43, 0.8);
+  --left-btn-hover-color: rgb(202, 23, 23);
+  --right-btn-hover-color: rgba(28, 122, 28, 1);
+  --other-width: 25%;
+  --hover-width: 75%;
+  --speed: 1000ms;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+  margin: 0;
+
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+}
+
+h1 {
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  white-space: nowrap;
+  font-size: 50px;
+  transform: translateX(-50%);
+}
+
+.split {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.split.left {
+  left: 0;
+  background: url("https://images.pexels.com/photos/3574440/pexels-photo-3574440.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.split.left::before {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--left-bg-color);
+}
+
+.split.right {
+  right: 0;
+  background: url("https://images.pexels.com/photos/1710795/pexels-photo-1710795.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.split.right::before {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--right-bg-color);
+}
+
+.btn {
+  color: aliceblue;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  text-decoration: none;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: white solid 0.2rem;
+  width: 15rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 1.5rem;
+}
+
+.split.left .btn:hover {
+  background-color: var(--left-btn-hover-color);
+  border-color: var(--left-btn-hover-color);
+}
+
+.split.right .btn:hover {
+  background-color: var(--right-btn-hover-color);
+  border-color: var(--right-btn-hover-color);
+}
+
+.hover-left .left {
+  width: var(--hover-width);
+}
+
+.hover-left .right {
+  width: var(--other-width);
+}
+
+.hover-right .right {
+  width: var(--hover-width);
+}
+
+.hover-right .left {
+  width: var(--other-width);
+}
+
+.split.left,
+.split.left::before,
+.split.right,
+.split.right::before {
+  transition: all var(--speed) ease-in-out;
+}
+
+@media (max-width: 800px) 
+{
+  h1 {
+    font-size: 2rem;
+  }
+  .btn {
+    padding: 1.2rem;
+    width: 12rem;
+  }
+} ;

@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+  margin: 0;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg {
+  background: url(https://images.pexels.com/photos/4245826/pexels-photo-4245826.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+    no-repeat center center/cover;
+  position: absolute;
+  top: -30;
+  left: -30;
+  height: calc(100vh + 60px);
+  width: calc(100vw + 60px);
+  z-index: -1;
+  filter: blur(00px);
+}
+
+.loading-text {
+  font-size: 50px;
+  color: white;
+}

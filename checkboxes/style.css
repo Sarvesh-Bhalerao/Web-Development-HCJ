@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 10px;
+  width: 200px;
+}
+
+.toggle {
+  visibility: hidden;
+}
+
+span {
+  font-size: 24px;
+}
+
+.label {
+  position: relative;
+  background-color: rgb(172, 169, 169);
+  height: 40px;
+  width: 80px;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 0 10px 0;
+  display: inline-block;
+}
+
+.toggle:checked + .label {
+  background-color: indigo;
+}
+
+.ball {
+  background-color: ivory;
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  align-items: center;
+  justify-content: center;
+  animation: slideoff 0.3s linear forwards;
+}
+
+.toggle:checked + .label .ball {
+  animation: slideon 0.3s linear forwards;
+}
+
+@keyframes slideon {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    transform: translateX(50%) scale(1.2);
+  }
+
+  100% {
+    transform: translateX(100%) scale(1);
+  }
+}
+
+@keyframes slideoff {
+  0% {
+    transform: translateX(100%) scale(1);
+  }
+
+  50% {
+    transform: translateX(50%) scale(1.2);
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}

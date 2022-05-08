@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(20, 0, 133);
+  color: aliceblue;
+  font-family: "PT Sans", sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+div {
+  position: absolute;
+  bottom: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: aqua;
+  color: black;
+}
+
+input {
+  width: 50px;
+  padding: 5px;
+
+  font-size: 18px;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+}
